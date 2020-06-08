@@ -1,0 +1,47 @@
+<%# <p id="notice"><%= notice %></p> %>
+
+<h1>シラバス検索</h1>
+
+<div class="search-form">
+  <%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
+    <div class="field">
+      <%= f.label(:title, "科目名") %>
+      <%= f.text_field :title, value: @subject_search_params[:title] %>
+    </div>
+
+    <div class="field">
+      <%= f.label(:name, "教師名") %>
+      <%= f.text_field :name, value: @teacher_search_params[:name] %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "検索" %>
+    </div>
+  <% end %>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>科目</th>
+    <th>曜日</th>
+    <th>時限</th>
+    <th>教授名</th>
+    <th>授業名</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @searches.each do |search| %>
+    <tr>
+      <td><%= search.title %></td>
+      <td><%= search.weekday %></td>
+      <td><%= search.periods %></td>
+      <td><%= search.teacher.name %></td>
+      <%# <td><%= search.lecture.title %></td> %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
