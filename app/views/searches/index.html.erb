@@ -6,12 +6,12 @@
   <%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
     <div class="field">
       <%= f.label(:title, "科目名") %>
-      <%= f.text_field :title, value: @subject_search_params[:title] %>
+      <%= f.text_field :title, value: @search_params[:title] %>
     </div>
 
     <div class="field">
       <%= f.label(:name, "教師名") %>
-      <%= f.text_field :name, value: @teacher_search_params[:name] %>
+      <%= f.text_field :name, value: @search_params[:name] %>
     </div>
 
     <div class="actions">
