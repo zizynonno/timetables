@@ -9,7 +9,7 @@
 Subject.create!(
   [
     {
-      title: 'プログラミング1',
+      title: 'Programming1',
       weekday: 'Monday',
       periods: 1,
     },
@@ -24,7 +24,7 @@ Subject.create!(
 Teacher.create!(
   [
     {
-      name: '田中正一',
+      name: 'Michael',
       subject_id: 1,
     },
     {
@@ -39,7 +39,7 @@ bookkeeping_time = Date.new(2020,9,9)
 
 5.times do |n|
   Lecture.create!(
-    title: "統計#{n+1}",
+    title: "Programming#{n+1}",
     date: statistics_time + (n*7),
     subject_id: 1,
   )

@@ -8,6 +8,6 @@ class Subject < ApplicationRecord
     subject_like(search_params[:title])
       .teacher_like(search_params[:name])
   end
-  scope :subject_like, -> (title) { where('name LIKE ?', "%#{title}%") if title.present? }
-  scope :teacher_like, -> (name) { teacher.where('name LIKE ?', "%#{name}%") if name.present? }
+  scope :subject_like, -> (title) { where('title LIKE ?', "%#{title}%") if title.present? }
+  scope :teacher_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
 end
